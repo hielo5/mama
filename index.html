@@ -9,7 +9,7 @@
 <body class="text-[#242424] w-[300px] m-auto text-2xl p-2 pt-[50px] font-semibold border-[#242424]">
 
 
-    <div  class="mb-2 py-2 flex justify-center border-2  border-[#242424] ">Dinastía lashes</div>
+    <div id="FullPantalla" class="mb-2 py-2 flex justify-center border-2  border-[#242424] ">Dinastía lashes</div>
     <div class="mb-2 flex justify-center">Turnos</div>
 
     <div class="grid grid-cols-3">
@@ -49,6 +49,34 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const fullScreenButton = document.getElementById('FullPantalla');
+
+        fullScreenButton.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                    document.documentElement.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        });
+    });
     </script>
     
     
