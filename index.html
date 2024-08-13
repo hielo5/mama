@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-[#242424] w-[300px] m-auto text-2xl p-2 pt-[50px] font-semibold border-[#242424]">
+
+
+    <div  class="mb-2 py-2 flex justify-center border-2  border-[#242424] ">Dinastía lashes</div>
+    <div class="mb-2 flex justify-center">Turnos</div>
+
+    <div class="grid grid-cols-3">
+        <div class="grid gap-2">
+            <div id="Lunes" class="p-2 px-5 flex place-content-center justify-center border-2  border-[#242424] ">Lunes</div>
+            <div id="Martes" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Martes</div>
+            <div id="Miércoles" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Miércoles</div>
+            <div id="Jueves" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Jueves</div>
+            <div id="Viernes" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Viernes</div>
+            <div id="Sábado" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Sábado</div>
+            <div id="Domingo" class="p-2 px-5 flex place-content-center justify-center border-2 border-[#242424] ">Domingo</div>
+        </div>
+        <div class="grid gap-2 col-span-2 pl-10">
+            <div id="ResuLunes" class="p-2 px-5">Disponible</div>
+            <div id="ResuMartes" class="p-2 px-5 flex ">Disponible</div>
+            <div id="ResuMiércoles" class="p-2 px-5 flex ">Disponible</div>
+            <div id="ResuJueves" class="p-2 px-5 flex ">Disponible</div>
+            <div id="ResuViernes" class="p-2 px-5 flex ">Disponible</div>
+            <div id="ResuSábado" class="p-2 px-5 flex ">Disponible</div>
+            <div id="ResuDomingo" class="p-2 px-5 flex ">Disponible</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    
+            days.forEach(day => {
+                document.getElementById(day).addEventListener('click', function() {
+                    const resultId = 'Resu' + day;
+                    const resultElement = document.getElementById(resultId);
+                    if (resultElement.textContent === 'Disponible') {
+                        resultElement.textContent = 'Ocupado';
+                    } else if (resultElement.textContent === 'Ocupado') {
+                        resultElement.textContent = 'Disponible';
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
+
+<button></button>
